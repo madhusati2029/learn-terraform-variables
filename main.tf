@@ -121,3 +121,15 @@ module "ec2_instances" {
     environment = "development"
   }
 }
+
+
+module "website_s3_bucket" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = "sat-example-11192025"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
